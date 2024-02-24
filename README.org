@@ -1,0 +1,9 @@
+* Powershell-ts-mode
+Mode for editing powershell files using emacs and treesitter.
+
+Example config:
+#+BEGIN_SRC emacs-lisp
+(use-package powershell-ts-mode
+  :straight (:host github :repo "dmille56/powershell-ts-mode")
+  )
+#+END_SRC
