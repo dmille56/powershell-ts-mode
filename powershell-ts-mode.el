@@ -19,9 +19,10 @@
 ;; Notes:
 ;; :TODO: go through tutorial / language features make sure everything looks good
 ;; :TODO: syntax highlighting
-;;  - fix all the features being functions...
+;;  - figure out how to highlight the default keyword in a switch statement
+;;  - fix all the features being functions.
 ;; :TODO: indentation support
-;;  - test more thoroughly... figure out if anything seems missing
+;;  - test more thoroughly... figure out if anything seems missing... fix any issues
 ;; :TODO: imenu support
 ;;  - make top level variables work better
 ;;  - get rid of duplicates in the list (for top level variables)
@@ -143,6 +144,13 @@
     :feature function
     :override t
     ((elseif_clause "elseif" @font-lock-keyword-face))
+    
+
+    ;; switch statement
+    :language powershell
+    :feature function
+    :override t
+    ((switch_statement "switch" @font-lock-keyword-face))
 
     ;; foreach statement
     :language powershell
@@ -221,6 +229,7 @@
     :feature function
     :override t
     ((finally_clause "finally"  @font-lock-keyword-face))
+
 ))
 
 (defun powershell-ts-imenu-func-node-p (node)
