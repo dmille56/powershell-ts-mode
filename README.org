@@ -1,5 +1,9 @@
-* Powershell-ts-mode
+* powershell-ts-mode
 Mode for editing powershell files using emacs and treesitter.
+
+Dependencies: 
+1. Emacs compiled with treesit support (version 29+)
+2. Installed powershell treesitter grammar
 
 Example config:
 #+BEGIN_SRC emacs-lisp
@@ -12,3 +16,16 @@ Example config:
   (add-to-list 'auto-mode-alist '("\\.psd1\\'" . powershell-ts-mode))
 )
 #+END_SRC
+
+* Instructions to install powershell treesitter grammar (needed for it to work)
+Requires: Emacs 29+, git, C compiler, C++ compiler
+1. M-x treesit-install-language-grammer
+2. Enter in powershell as your language
+3. Enter yes to build recipe for powershell interactively
+4. Enter in the url of the grammar: https://github.com/airbus-cert/tree-sitter-powershell (:NOTE: tested with commit: 9d95502e730fb403bdf56279d84630c8178b10be)
+5. Stick to the defaults for git branch, "src" directory, C compiler, and C++ compilers
+
+:NOTE: for Windows I had to install GCC in order to compile the grammar
+
+* Why
+powershell-mode has some bugs when dealing with strings (ex: "\home\user\") and multi-line comments (ex: "<#/n###>") ... By using treesitter we're able to get more accurate parsing and syntax highlighting rather then relying on regular expressions to do this which was error prone.
