@@ -9,7 +9,6 @@
 ;; - https://github.com/mickeynp/html-ts-mode
 
 ;; Notes:
-;; :TODO: go through tutorial / language features make sure everything looks good
 ;; :TODO: indentation support
 ;;  - test more thoroughly... figure out if anything seems missing... fix any issues
 ;; :TODO: add code folding support
@@ -372,6 +371,9 @@ And not a class or function parent."
               (append "{}():;," electric-indent-chars))
   (setq-local compile-command powershell-ts-compile-command)
   (setq-local which-func-functions nil)
+
+  ;; :TODO: make hs-minor-mode work with powershell-ts-mode (for some reason this doesn't work???)
+  (add-to-list 'hs-special-modes-alist '(powershell-ts-mode "{" "}" "<[#>]" nil nil))
 
   ;; finish with this call to finalize the treesit setup
   (treesit-major-mode-setup))
