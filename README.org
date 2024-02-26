@@ -28,6 +28,8 @@ Powershell-ts-mode is an Emacs mode for editing Powershell files using Treesitte
 )
 #+END_SRC
 
+For other customizable variables see: powershell-ts-mode customize group
+
 ** Grammar installation instructions
 Requires: Emacs 29+, git, C compiler, C++ compiler
 1. M-x treesit-install-language-grammar

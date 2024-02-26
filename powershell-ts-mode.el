@@ -2,14 +2,6 @@
 
 ;; Powershell mode using treesitter
 
-;; To install treesitter grammar (requires Emacs 29, git, C compiler, C++ compiler):
-;; M-x treesit-install-language-grammer
-;; Enter in powershell as your language
-;; Enter yes to build recipe for powershell interactively
-;; Enter in the url of the grammar: https://github.com/airbus-cert/tree-sitter-powershell
-;; Stick to the defaults for git branch, "src" directory, C compiler, and C++ compilers
-;; Tested with commit: 9d95502e730fb403bdf56279d84630c8178b10be
-
 ;;; Commentary:
 
 ;; Useful references:
@@ -18,17 +10,17 @@
 
 ;; Notes:
 ;; :TODO: go through tutorial / language features make sure everything looks good
+;; :TODO: indentation support
+;;  - test more thoroughly... figure out if anything seems missing... fix any issues
+;; :TODO: add code folding support
+;; :TODO: add powershell shell support
 ;; :TODO: syntax highlighting
 ;;  - figure out how to highlight the default keyword in a switch statement
 ;;  - fix all the features being functions.
-;; :TODO: indentation support
-;;  - test more thoroughly... figure out if anything seems missing... fix any issues
 ;; :TODO: imenu support
 ;;  - make top level variables work better
 ;;  - get rid of duplicates in the list (for top level variables)
 ;; :TODO: make sure Which Function Mode works
-;; :TODO: add powershell shell support
-;; :TODO: add code folding support
 
 ;;; Code:
 
