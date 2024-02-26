@@ -1,6 +1,8 @@
 * About
 Powershell-ts-mode is an Emacs mode for editing Powershell files using Treesitter.
 
+[[https://i.imgur.com/LHOyls2.png][Example]]
+
 * Table of Contents                                                     :TOC:
 - [[#about][About]]
 - [[#installation][Installation]]
