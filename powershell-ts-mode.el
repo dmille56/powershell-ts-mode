@@ -95,6 +95,11 @@
     :language powershell
     :feature function
     ((function_statement "function" @font-lock-operator-face (function_name) @font-lock-function-name-face))
+
+    ;; workflow
+    :language powershell
+    :feature function
+    ((function_statement "workflow" @font-lock-operator-face (function_name) @font-lock-function-name-face))
     
     ;; function call
     :language powershell
@@ -222,6 +227,15 @@
     :override t
     ((finally_clause "finally"  @font-lock-keyword-face))
 
+    :language powershell
+    :feature function
+    :override t
+    ((trap_statement "trap" @font-lock-keyword-face))
+
+    :language powershell
+    :feature function
+    :override t
+    ((parallel_statement "parallel" @font-lock-keyword-face))
 ))
 
 (defun powershell-ts-imenu-func-node-p (node)
