@@ -1,22 +1,40 @@
 * About
+:PROPERTIES:
+:CUSTOM_ID: about
+:END:
 Powershell-ts-mode is an Emacs mode for editing Powershell files using Treesitter.
 
 [[https://i.imgur.com/LHOyls2.png]]
 
-* Table of Contents                                                     :TOC:
+* Table of Contents
+:PROPERTIES:
+:TOC:      :include all :ignore (this)
+:CUSTOM_ID: table-of-contents
+:END:
+:CONTENTS:
 - [[#about][About]]
 - [[#installation][Installation]]
   - [[#dependencies][Dependencies]]
   - [[#config][Config]]
   - [[#grammar-installation-instructions][Grammar installation instructions]]
 - [[#why][Why]]
+:END:
 
 * Installation
+:PROPERTIES:
+:CUSTOM_ID: installation
+:END:
 ** Dependencies
+:PROPERTIES:
+:CUSTOM_ID: dependencies
+:END:
 1. Emacs compiled with treesit support (version 29+)
 2. Installed powershell treesitter grammar
  
 ** Config
+:PROPERTIES:
+:CUSTOM_ID: config
+:END:
 #+BEGIN_SRC emacs-lisp
 (use-package powershell-ts-mode
   :straight (:host github :repo "dmille56/powershell-ts-mode")
@@ -33,6 +51,9 @@ Powershell-ts-mode is an Emacs mode for editing Powershell files using Treesitte
 For other customizable variables see: powershell-ts-mode customize group
 
 ** Grammar installation instructions
+:PROPERTIES:
+:CUSTOM_ID: grammar-installation-instructions
+:END:
 Requires: Emacs 29+, git, C compiler, C++ compiler
 1. M-x treesit-install-language-grammar
 2. Enter in powershell as your language
@@ -43,4 +64,7 @@ Requires: Emacs 29+, git, C compiler, C++ compiler
 NOTE: for Windows I had to install GCC in order to compile the grammar
 
 * Why
+:PROPERTIES:
+:CUSTOM_ID: why
+:END:
 Powershell-mode has some bugs when dealing with strings (ex: "\home\user\") and multi-line comments (ex: "<#/n###>") that made it unusable for me.  By using treesitter we're able to get more accurate parsing and syntax highlighting rather then relying on regular expressions to do this which reduces errors.
