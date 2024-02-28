@@ -18,6 +18,7 @@ Powershell-ts-mode is an Emacs mode for editing Powershell files using Treesitte
   - [[#config][Config]]
   - [[#grammar-installation-instructions][Grammar installation instructions]]
 - [[#why][Why]]
+- [[#development-cycle][Development cycle]]
 :END:
 
 * Installation
@@ -68,3 +69,14 @@ NOTE: for Windows I had to install GCC in order to compile the grammar
 :CUSTOM_ID: why
 :END:
 Powershell-mode has some bugs when dealing with strings (ex: "\home\user\") and multi-line comments (ex: "<#/n###>") that made it unusable for me.  By using treesitter we're able to get more accurate parsing and syntax highlighting rather then relying on regular expressions to do this which reduces errors.
+
+* Development cycle
+:PROPERTIES:
+:CUSTOM_ID: development-cycle
+:END:
+1. Spot missing syntax highlighting/ident rule
+2. View AST with treesit-explore-mode
+3. Locate the part that isn't working
+4. Add new pattern
+5. Reload code in powershell-ts-mode.el
+6. =M-x revert-buffer= in your file.ps1
