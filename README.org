@@ -74,7 +74,7 @@ Powershell-mode has some bugs when dealing with strings (ex: "\home\user\") and 
 :PROPERTIES:
 :CUSTOM_ID: development-cycle
 :END:
-1. Spot missing syntax highlighting/ident rule
+1. Spot missing syntax highlighting/indent rule
 2. View AST with treesit-explore-mode
 3. Locate the part that isn't working
 4. Add new pattern
