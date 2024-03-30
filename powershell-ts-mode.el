@@ -394,5 +394,8 @@ And not a class or function parent."
     (treesit-parser-create 'powershell)
     (powershell-ts-setup)))
 
+;;;###autoload
+(add-to-list 'auto-mode-alist '("\\.ps[dm]?1\\'" . powershell-ts-mode))
+
 (provide 'powershell-ts-mode)
 ;;; powershell-ts-mode.el ends here
