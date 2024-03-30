@@ -1,6 +1,12 @@
-;;; powershell-ts-mode --- Summary
-
-;; Powershell mode using treesitter
+;;; powershell-ts-mode.el --- Powershell mode using treesitter  -*- lexical-binding: t; -*-
+;;
+;; Copyright (C) 2024
+;;
+;; Version: 0.1
+;; Keywords: powershell, languages, tree-sitter
+;; Package-Requires: ((emacs "29.1"))
+;; SPDX-License-Identifier: Apache-2.0
+;;
 
 ;;; Commentary:
 
