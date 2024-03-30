@@ -40,10 +40,6 @@ Powershell-ts-mode is an Emacs mode for editing Powershell files using Treesitte
 (use-package powershell-ts-mode
   :straight (:host github :repo "dmille56/powershell-ts-mode")
   :config
-  ;; Associate powershell files with powershell-ts-mode
-  (add-to-list 'auto-mode-alist '("\\.ps1\\'" . powershell-ts-mode))
-  (add-to-list 'auto-mode-alist '("\\.psm1\\'" . powershell-ts-mode))
-  (add-to-list 'auto-mode-alist '("\\.psd1\\'" . powershell-ts-mode))
   ;; Optional: if you want to disable top-level vars from being shown in imenu 
   (setq powershell-ts-enable-imenu-top-level-vars nil))
 #+END_SRC
