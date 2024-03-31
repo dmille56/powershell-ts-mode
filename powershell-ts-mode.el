@@ -336,16 +336,69 @@ And not a class or function parent."
   (treesit-node-text node))
 
 (defvar powershell-ts-indent-rules
-              `((powershell
-                 ((parent-is "statement_block") parent-bol powershell-ts-mode-indent-offset)
-                 ((parent-is "class_statement") parent-bol powershell-ts-mode-indent-offset)
-                 ((parent-is "class_method_definition") parent-bol powershell-ts-mode-indent-offset)
-                 ((parent-is "function_statement") parent-bol powershell-ts-mode-indent-offset)
-                 ((parent-is "param_block") parent-bol powershell-ts-mode-indent-offset)
-                 ((parent-is "hash_literal_expression") parent-bol powershell-ts-mode-indent-offset)
-                 ((parent-is "array_expression") parent-bol powershell-ts-mode-indent-offset)
-                 (no-node parent 0)
-                 )))
+  `((powershell
+     ((parent-is "program") parent-bol 0)
+     ((node-is "{") parent-bol 0)
+     ((node-is "}") parent-bol 0)
+     ((node-is "(") parent-bol 0)
+     ((node-is ")") parent-bol 0)
+
+     ((parent-is "statement_block") parent-bol powershell-ts-mode-indent-offset)
+     ((node-is "statement_block") parent-bol 0)
+     ((parent-is "script_block_expression") parent-bol powershell-ts-mode-indent-offset)
+     ((parent-is "script_block") parent-bol 0)
+     ((parent-is "script_parameter") parent-bol 0)
+     ((parent-is "pipeline") parent-bol powershell-ts-mode-indent-offset)
+
+     ((parent-is "command_elements") parent-bol powershell-ts-mode-indent-offset)
+     ((parent-is "invokation_expression") parent-bol powershell-ts-mode-indent-offset)
+     ((parent-is "argument_list") parent-bol powershell-ts-mode-indent-offset)
+     ((parent-is "argument_expression_list") parent 0)
+
+     ((parent-is "class_statement") parent-bol powershell-ts-mode-indent-offset)
+     ((parent-is "class_property_definition") parent-bol powershell-ts-mode-indent-offset)
+     ((parent-is "class_method_definition") parent-bol powershell-ts-mode-indent-offset)
+
+     ((parent-is "function_statement") parent-bol powershell-ts-mode-indent-offset)
+     ((parent-is "function_parameter_declaration") parent-bol powershell-ts-mode-indent-offset)
+     ((node-is "parameter_list") parent-bol powershell-ts-mode-indent-offset)
+     ((parent-is "parameter_list") parent 0)
+     ((parent-is "attribute_list") parent-bol 0)
+     ((node-is "param") parent-bol 0)
+     ((parent-is "param_block") parent-bol powershell-ts-mode-indent-offset)
+
+     ((n-p-gp nil "statement_list" "script_block_body") great-grand-parent 0)
+     ((parent-is "statement_list") parent-bol 0)
+
+     ((node-is "while_condition") parent-bol powershell-ts-mode-indent-offset)
+     ((match "else" "if_statement") parent-bol 0)
+     ((match "while" "do_statement") parent-bol 0)
+
+     ((parent-is ,(rx (or (seq (or "if" "for" "foreach" "while" "do") "_statement")
+                          "else_clause" "elseif_clause")))
+      parent-bol powershell-ts-mode-indent-offset)
+
+     ((parent-is "switch_statement") parent-bol 0)
+     ((parent-is ,(rx (seq (or "switch" "switch_clause") "_condition"))) parent-bol
+      powershell-ts-mode-indent-offset)
+     ((parent-is "switch_body") parent-bol powershell-ts-mode-indent-offset)
+     ((parent-is "switch_clauses") parent 0)
+
+     ((match "catch" "try_statement") parent 0)
+     ((match "final" "try_statement") parent 0)
+
+     ((parent-is "hash_literal_expression") parent-bol powershell-ts-mode-indent-offset)
+     ((parent-is "hash_literal_body") parent 0)
+
+     ((parent-is "array_literal_expression") parent-bol 0)
+     ((parent-is "array_expression") parent-bol powershell-ts-mode-indent-offset)
+
+     ((parent-is "logical_expression") parent 0)
+
+     ((parent-is "assignment_expression") parent-bol powershell-ts-mode-indent-offset)
+
+     (no-node parent-bol 0)
+     )))
 
 (defun powershell-ts-setup ()
   "Setup treesit for powershell-ts-mode."
