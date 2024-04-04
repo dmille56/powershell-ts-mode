@@ -1,14 +1,17 @@
 ;;; powershell-ts-mode.el --- Powershell mode using treesitter  -*- lexical-binding: t; -*-
-;;
+
 ;; Copyright (C) 2024
-;;
+
+;; Author: Donovan Miller
+;; URL: https://github.com/dmille56/powershell-ts-mode
 ;; Version: 0.1
 ;; Keywords: powershell, languages, tree-sitter
 ;; Package-Requires: ((emacs "29.1"))
 ;; SPDX-License-Identifier: Apache-2.0
-;;
 
 ;;; Commentary:
+
+;;; Code:
 
 ;; Useful references:
 ;; - https://www.masteringemacs.org/article/lets-write-a-treesitter-major-mode
@@ -26,8 +29,6 @@
 ;;  - make top level variables work better
 ;;  - get rid of duplicates in the list (for top level variables)
 ;; :TODO: make sure Which Function Mode works
-
-;;; Code:
 
 (require 'treesit)
 (require 'prog-mode)
