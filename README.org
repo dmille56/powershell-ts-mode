@@ -58,7 +58,8 @@ Requires: Emacs 29+, git, C compiler, C++ compiler
 4. Enter in the url of the grammar: https://github.com/airbus-cert/tree-sitter-powershell (NOTE: tested with commit: 9d95502e730fb403bdf56279d84630c8178b10be)
 5. Stick to the defaults for git branch, "src" directory, C compiler, and C++ compilers
 
-NOTE: for Windows I had to install GCC in order to compile the grammar
+NOTE: for Windows I had to install GCC in order to compile the grammar.
+
 The pre-built binaries (including ~tree-sitter-powershell~) can be found here https://github.com/kiennq/treesit-langs/releases
 
 * Why
@@ -78,4 +79,4 @@ Powershell-mode has some bugs when dealing with strings (ex: "\home\user\") and 
 5. Reload code in powershell-ts-mode.el
 6. =M-x revert-buffer= in your file.ps1
 
-NOTE: There're test powershell file under ~./test-ps-scripts/*.ps1~ that can be used to make sure that the new highlighting/indent rules shouldn't broken the current expected format.
+NOTE: there're test powershell file under ~./test-ps-scripts/*.ps1~ that can be used to make sure that the new highlighting/indent rules shouldn't broken the current expected format.
