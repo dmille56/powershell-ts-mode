@@ -79,4 +79,4 @@ Powershell-mode has some bugs when dealing with strings (ex: "\home\user\") and 
 5. Reload code in powershell-ts-mode.el
 6. =M-x revert-buffer= in your file.ps1
 
-NOTE: there're test powershell file under ~./test-ps-scripts/*.ps1~ that can be used to make sure that the new highlighting/indent rules shouldn't broken the current expected format.
+NOTE: there are test PowerShell files under ~./test-ps-scripts/*.ps1~ that can be used to ensure that the new highlighting and indent rules do not break the current expected format.
