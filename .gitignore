@@ -13,3 +13,5 @@ dist/*
 
 # Undo-tree save-files
 *.~undo-tree
+
+PowerShellEditorServices.json
