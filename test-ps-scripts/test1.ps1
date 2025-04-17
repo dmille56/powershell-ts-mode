@@ -330,3 +330,17 @@ foreach ($runspace in $runspaces) {
 }
 
 $runspacePool.Close()
+
+# Enum example
+enum DaysOfWeek {
+    Sunday
+    Monday
+    Tuesday
+    Wednesday
+    Thursday
+    Friday
+    Saturday
+}
+
+# Assigning an enum value to a variable
+$today = [DaysOfWeek]::Friday

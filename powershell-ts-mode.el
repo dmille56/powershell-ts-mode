@@ -87,6 +87,11 @@
     :override t
     ((string_literal (expandable_here_string_literal) @font-lock-string-face))
 
+    ;; enum definition
+    :language powershell
+    :feature function
+    ((enum_statement "enum" @font-lock-operator-face (simple_name) @font-lock-function-name-face))
+
     ;; class definition
     :language powershell
     :feature function
